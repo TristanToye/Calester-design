@@ -25,10 +25,11 @@
 
 .calendar {
      table-layout:fixed;
+
 }
 
 .calendar TH {
-     width: 50px;
+     width: 150px;
      height: 30px;
 
      font-size: 1.8em;
@@ -48,10 +49,11 @@
      height: 65px;
      width: 50px;
 
-     font-size: 32px;
+     font-size: 20px;
      font-weight: bold;
      color: rgba(0, 0, 0, 0.3);
-     text-align: center;
+     text-align: left;
+
 
      -moz-transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s;
      -moz-transition: background 0.2s linear 0s;

@@ -81,10 +81,15 @@ body {
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
 <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 <link rel="shortcut icon" href="assets/ico/favicon.png">
-<!-- jQuery and the Calendar plugin files -->
-    <script type="text/javascript" src="./js/jquery.js" ></script>
-    <script type="text/javascript" src="./js/bootstrap.js" ></script>
-    <script type="text/javascript" src="../src/bootstrap.calendar.js" ></script>
+
+<!-- Bootstrap calendar -->
+<link rel="stylesheet" href="assets/css/bootstrap.calendar.css" type="text/css" />
+
+
+    <!-- jQuery and the Calendar plugin files -->
+    <script type="text/javascript" src="assets/js/jquery.js" ></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js" ></script>
+    <script type="text/javascript" src="assets/js/bootstrap.calendar.js" ></script>
 
     <script type="text/javascript">
         $(document).ready(function(){
@@ -118,10 +123,9 @@ body {
       });
 
     </script>
-
 </head>
 
-<body>
+<body >
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
@@ -188,9 +192,24 @@ body {
 			</div>
 		</div>
 	</div>
+
 	<div class="row">
-        <div class="span4" id="calendar"></div>
+		<div class="span2">
+		</div>
+        <div class="span10">
+        	<!--FEED NAV-->
+			<ul class="nav nav-tabs">
+				<li class="active"> <a href="#tab1"  data-toggle="tab">Calendar</a> </li>
+				<li><a href="#tab2"  data-toggle="tab">Feed</a></li>
+			</ul>
+        	<div id="calendar"></div>
+    	</div><!-- Nav bar for Calendar and feed -->
       </div>
-</div>
+      <!--Footer-->
+	<hr>
+	<footer>
+		<p>&copy; Calestar 2013 | <a href="#">Home</a> | <a href="#">About</a> |</p>
+	</footer>
+</div> <!-- End of container -->
 
 
