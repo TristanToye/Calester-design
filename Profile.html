@@ -67,6 +67,25 @@ body {
 	font-size: .9em;
 	clear: left
 }
+.sidebar {
+  margin-top: 3%;
+}
+.sidebar ul li{
+  margin-top: 3%;
+}
+.sidebar ul li i {
+  margin-left: 45px;
+}
+.socialmedia li{
+	display: inline-block;
+	list-style: none;
+	margin-top:2%;
+}
+.nigg{
+	margin-top: 5%;
+}
+
+
 </style>
 <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -92,41 +111,56 @@ body {
     <script type="text/javascript" src="assets/js/bootstrap.calendar.js" ></script>
 
     <script type="text/javascript">
-        $(document).ready(function(){
+       $(document).ready(function(){
 
           var evnts = function(){
               return {
                       "event":
                           [
-                               {"date":"01/01/2012","title":"1"}
-                              ,{"date":"02/02/2012","title":"2"}
-                              ,{"date":"03/03/2012","title":"34"}
-                              ,{"date":"04/04/2012","title":"123"}
-                              ,{"date":"05/05/2012","title":"223"}
-                              ,{"date":"06/06/2012","title":"4"}
-                              ,{"date":"07/07/2012","title":"5"}
-                              ,{"date":"08/08/2012","title":"14"}
-                              ,{"date":"09/09/2012","title":"10"}
-                              ,{"date":"10/10/2012","title":"10"}
-                              ,{"date":"11/11/2012","title":"10"}
-                              ,{"date":"12/12/2012","title":"10"}
+                               {"date":"03/03/2013","title":"1"}
+                              ,{"date":"03/05/2013","title":"2"}
+                              ,{"date":"03/03/2013","title":"34"}
+                              ,{"date":"03/28/2013","title":"123"}
+                              ,{"date":"03/19/2013","title":"223"}
+                              ,{"date":"03/12/2013","title":"4"}
+                              ,{"date":"03/06/2013","title":"5"}
+                              ,{"date":"03/03/2013","title":"14"}
+                              ,{"date":"03/09/2013","title":"10"}
+                              ,{"date":"03/10/2013","title":"10"}
+                              ,{"date":"03/11/2013","title":"10"}
+                              ,{"date":"03/12/2013","title":"10"}
                           ]
                       }
           };
 
          $('#calendar').Calendar({ 'events': evnts, 'weekStart': 1 })
-         .on('changeDay', function(event){ alert(event.day.valueOf() +'-'+ event.month.valueOf() +'-'+ event.year.valueOf() ); })
-         .on('onEvent', function(event){ alert(event.day.valueOf() +'-'+ event.month.valueOf() +'-'+ event.year.valueOf() ); })
-         .on('onNext', function(event){ alert("Next"); })
-         .on('onPrev', function(event){ alert("Prev"); })
-         .on('onCurrent', function(event){ alert("Current"); });
+         .on('changeDay', function(event){  })
+         .on('onEvent', function(event){  })
+         .on('onNext', function(event){  })
+         .on('onPrev', function(event){  })
+         .on('onCurrent', function(event){  });
       });
+ var evnts = function(){
+              return {
+                      "event":
+                          [
+                               {"date":"2013-03-25","title":"1"}
+                              ,{"date":"2013-03-06","title":"2"}
+                          ]
+                      }
+          };
 
+    $('element_to_render_calendar').Calendar({ 'events': evnts,
+        'weekStart': 1 })
+        .on('changeDay', function(event){ })
+        .on('onEvent', function(event){  })
+        .on('onNext', function(event){  })
+        .on('onPrev', function(event){  })
+        .on('onCurrent', function(event){  }); 
     </script>
 </head>
 
 <body >
-	<?php include('navbar.html') ?>
 <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
@@ -135,28 +169,25 @@ body {
 			<div class="nav-collapse collapse">
 				<ul class="nav">
 					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#about">Calendar</a></li>
-					<li><a href="#contact">Contact</a></li>
-					<li class="dropdown pull-right">
-			    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-			      <img src="img/testavatar.png" height="30" width="30" >      Profile Name
-			    </a>
-			</li>
-			    <ul class="dropdown-menu">
-			     	<li><a href="#">Hello</a></li>
-					<li><a href="#">Hello</a></li>
-					<li><a href="#">Hello</a></li>
-					<!-- dropdown menu links -->
-			    </ul>
-			  </li>
+					<li><a href="#">MyCal</a></li>
+					<li><a href="#">Discover</a></li>
 				</ul>
+				<ul class="nav pull-right">
+					<li class="divider-vertical"></li>
+					<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="img/testavatar.png" class="logo" >&nbsp; Profile Name </a>
+						<ul class="dropdown-menu">
+							<li><a href="#"><i class="icon-edit "></i> Profile</a></li>
+							<li><a href="#"><i class="icon-th-list "></i> Settings</a></li>
+							<li><a href="#"><i class="icon-off "></i> Logout</a></li>
+							<!-- dropdown menu links -->
+						</ul>
+					</li>
+				</ul>
+				<form class="navbar-search pull-right">
+					<input type="text" class="search-query" placeholder="Search">
+				</form>
 			</div>
-			<!-- Profile link -->
-			<ul class="nav pull-right">
-			  <li class="divider-vertical"></li>
-			  
-			  <li class="divider-vertical"></li>
-			</ul>
+			<!-- Profile link --> 
 			<!--/.nav-collapse --> 
 		</div>
 	</div>
@@ -165,54 +196,186 @@ body {
 	<div class="row">
 		<div class="span12">
 			<div class="well">
-			  
-			<!--profile box-->
-			<div class="row profile"> 
-				<!--Thubnail-->
-				<div class="span2 thumbnail pull-left"><img src="img/testavatar.png"></div>
 
-				<div class="row">
-					<!--Profile Info-->
-					<div class="span5 pull-left">
-						<h3>Profile Name</h3>
-						<p>This is some info about what we should. This is some info about what we should. This is some info about what we should </p>
-						<!--Profile Meta-->
-						<p style="font-size:.9em;">&#64;profilename | Job Title for Company Name | Hamilton, ON.</p>
-						<p>
-						  <button class="btn btn-large btn-success" type="button">Follow</button>
-						</p>
-					</div>
-					<!--Follower Meta-->
-					<div class="span3">
-						<div class="btn-group">
-							<button class="btn">245 </br>Followers</button>
-							<button class="btn">198 </br>Following</button>
-							<button class="btn">45 </br>Events</button>
+			<!--profile box-->
+				<div class="row profile"> 
+					<!--Thubnail-->
+					<div class="span2 thumbnail pull-left"><img src="img/friend4.png"></div>
+
+					<div class="row">
+						<!--Profile Info-->
+						<div class="span5 pull-left">
+							<h3>MSU McMaster</h3>
+							<p>This is some info about what we should. This is some info about what we should. This is some info about what we should </p>
+							<!--Profile Meta-->
+							<p style="font-size:.9em;">&#64;msumcmaster | Job Title for Company Name | Hamilton, ON.</p>
+							  <button class="btn btn-large btn-success" type="button">Follow</button>
+						</div>
+						<!--Follower Meta-->
+						<div class="span4 pull-right nigg">
+							<div class="btn-group">
+								<button class="btn">245 Followers</button>
+								<button class="btn">198 Following</button>
+								<button class="btn">45 Events</button>
+							</div>
+							<ul class="socialmedia">
+								<li><a href="#"><img src="img/facebook-icon.png"></a></li>
+								<li><a href="#"><img src="img/twitter-icon.png"></a></li>
+								<li><a href="#"><img src="img/google-plus-icon.png"></a></li>
+								<li><a href="#"><img src="img/pinterest-icon.png"></a></li>
+								<li><a href="#"><img src="img/youtube-icon.png"></a></li>
+							</ul>
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="row">
-		<div class="span2">
+		<div class="span3 sidebar">
+			<button type="button" class="btn btn-danger btn-block btn-large" data-toggle="button"><h2>MyCal</h2></button></br>
+	      <ul class="nav nav-pills nav-stacked well">
+	        <li><button type="button" class="btn btn-block btn-large" data-toggle="button"><div class="pull-left"><i class="icon-ok"></i> Twelveighty</div></button></li>
+	        <li><button type="button" class="btn btn-block btn-large" data-toggle="button"><div class="pull-left"><i class="icon-ok"></i> SRA</div></button></li>
+	        <li><button type="button" class="btn btn-block btn-large" data-toggle="button"><div class="pull-left"><i class="icon-ok"></i> Alumni</div></button></li>
+	        <li><button type="button" class="btn btn-block btn-large" data-toggle="button"><div class="pull-left"><i class="icon-ok"></i> Clubs</div></button></li>
+	      </ul>
 		</div>
-        <div class="span10">
-        	<!--FEED NAV-->
-			<ul class="nav nav-tabs">
-				<li class="active"> <a href="#tab1"  data-toggle="tab">Calendar</a> </li>
-				<li><a href="#tab2"  data-toggle="tab">Feed</a></li>
-			</ul>
-        	<div id="calendar"></div> <!-- YO TMAN -->
-    	</div><!-- Nav bar for Calendar and feed -->
-      </div>
+        <div class="span9 pull-right">
+	      	<div class="tabbable"> <!-- Only required for left/right tabs -->
+		        <ul class="nav nav-tabs">
+		          <li class="active"><a href="#tab1" data-toggle="tab">Calendar</a></li>
+		          <li><a href="#tab2" data-toggle="tab">Feed</a></li>
+		        </ul>
+		        <div class="tab-content">
+		          	<div class="tab-pane active" id="tab1">
+		            	<div id="calendar">
+		             	</div>
+		          	</div>
+		         	<div class="tab-pane" id="tab2">
+		            	<ul class="feed tab-pane active" id="tab1">
+					<!--Row of event-->
+					<div class="row single_event"> 
+						<!--Avatar-->
+						<div class="span1 thumbnail pull-left"><img src="img/friend4.png"></div>
+						<div class="span pull-left" type="button" data-toggle="button"><!--Go to event button--><a href="#" class="btn btn-info add_event pull-right"><img src="img/icon-calee-plus.svg" width="25px"></a> 
+							<!--Event Title-->
+							<h4 class="pull-left"><a href="#">Event title</a> </h4>
+							<!--Event Meta data--> 
+							<span style="font-size:.9em">&nbsp; | <a href="#">Event Location</a> | <a href="#">Event Date</a></span> 
+							<!--Event Description-->
+							<p>Hey Guys I am having a get-together to celebrate how awesome this project is. Feel free to stop by and have a great time. Moe is so totally invited, cause he will bring the cards. <a href="#">...More</a></p>
+							<!--RECALEI-->
+							<div class="feed_meta"> <i class="icon-retweet"></i>&nbsp;<a href="#">Recalee</a>&nbsp; 
+								<!--Invite friends/followers, maybe from facebook--> 
+								<i class="icon-plus"></i>&nbsp;<a href="#">Invite Friends</a>&nbsp; 
+								<!--Share on Twitter--> 
+								<i class="icon-share"></i>&nbsp;<a href="#">Share</a>&nbsp; 
+								<!--Share on Twitter--> 
+								<i class="icon-search"></i>&nbsp;<a href="#">View</a> </div>
+							<hr>
+						</div>
+					</div>
+					<!--Row of event-->
+					<div class="row single_event"> 
+						<!--Avatar-->
+						<div class="span1 thumbnail pull-left"><img src="img/friend4.png"></div>
+						<div class="span pull-left" type="button" data-toggle="button"><!--Go to event button--><a href="#" class="btn btn-info add_event pull-right"><img src="img/icon-calee-plus.svg" width="25px"></a> 
+							<!--Event Title-->
+							<h4 class="pull-left"><a href="#">Event title</a> </h4>
+							<!--Event Meta data--> 
+							<span style="font-size:.9em">&nbsp; | <a href="#">Event Location</a> | <a href="#">Event Date</a></span> 
+							<!--Event Description-->
+							<p>Hey Guys I am having a get-together to celebrate how awesome this project is. Feel free to stop by and have a great time. Moe is so totally invited, cause he will bring the cards. <a href="#">...More</a></p>
+							<!--RECALEI-->
+							<div class="feed_meta"> <i class="icon-retweet"></i>&nbsp;<a href="#">Recalee</a>&nbsp; 
+								<!--Invite friends/followers, maybe from facebook--> 
+								<i class="icon-plus"></i>&nbsp;<a href="#">Invite Friends</a>&nbsp; 
+								<!--Share on Twitter--> 
+								<i class="icon-share"></i>&nbsp;<a href="#">Share</a>&nbsp; 
+								<!--Share on Twitter--> 
+								<i class="icon-search"></i>&nbsp;<a href="#">View</a> </div>
+							<hr>
+						</div>
+					</div>
+					<!--Row of event-->
+					<div class="row single_event"> 
+						<!--Avatar-->
+						<div class="span1 thumbnail pull-left"><img src="img/friend4.png"></div>
+						<div class="span pull-left" type="button" data-toggle="button"><!--Go to event button--><a href="#" class="btn btn-info add_event pull-right"><img src="img/icon-calee-plus.svg" width="25px"></a> 
+							<!--Event Title-->
+							<h4 class="pull-left"><a href="#">Event title</a> </h4>
+							<!--Event Meta data--> 
+							<span style="font-size:.9em">&nbsp; | <a href="#">Event Location</a> | <a href="#">Event Date</a></span> 
+							<!--Event Description-->
+							<p>Hey Guys I am having a get-together to celebrate how awesome this project is. Feel free to stop by and have a great time. Moe is so totally invited, cause he will bring the cards. <a href="#">...More</a></p>
+							<!--RECALEI-->
+							<div class="feed_meta"> <i class="icon-retweet"></i>&nbsp;<a href="#">Recalee</a>&nbsp; 
+								<!--Invite friends/followers, maybe from facebook--> 
+								<i class="icon-plus"></i>&nbsp;<a href="#">Invite Friends</a>&nbsp; 
+								<!--Share on Twitter--> 
+								<i class="icon-share"></i>&nbsp;<a href="#">Share</a>&nbsp; 
+								<!--Share on Twitter--> 
+								<i class="icon-search"></i>&nbsp;<a href="#">View</a> </div>
+							<hr>
+						</div>
+					</div>
+					<!--Row of event-->
+					<div class="row single_event"> 
+						<!--Avatar-->
+						<div class="span1 thumbnail pull-left"><img src="img/friend4.png"></div>
+						<div class="span pull-left" type="button" data-toggle="button"><!--Go to event button--><a href="#" class="btn btn-info add_event pull-right"><img src="img/icon-calee-plus.svg" width="25px"></a> 
+							<!--Event Title-->
+							<h4 class="pull-left"><a href="#">Event title</a> </h4>
+							<!--Event Meta data--> 
+							<span style="font-size:.9em">&nbsp; | <a href="#">Event Location</a> | <a href="#">Event Date</a></span> 
+							<!--Event Description-->
+							<p>Hey Guys I am having a get-together to celebrate how awesome this project is. Feel free to stop by and have a great time. Moe is so totally invited, cause he will bring the cards. <a href="#">...More</a></p>
+							<!--RECALEI-->
+							<div class="feed_meta"> <i class="icon-retweet"></i>&nbsp;<a href="#">Recalee</a>&nbsp; 
+								<!--Invite friends/followers, maybe from facebook--> 
+								<i class="icon-plus"></i>&nbsp;<a href="#">Invite Friends</a>&nbsp; 
+								<!--Share on Twitter--> 
+								<i class="icon-share"></i>&nbsp;<a href="#">Share</a>&nbsp; 
+								<!--Share on Twitter--> 
+								<i class="icon-search"></i>&nbsp;<a href="#">View</a> </div>
+							<hr>
+						</div>
+					</div>
+					<!--Row of event-->
+					<div class="row single_event"> 
+						<!--Avatar-->
+						<div class="span1 thumbnail pull-left"><img src="img/friend4.png"></div>
+						<div class="span pull-left" type="button" data-toggle="button"><!--Go to event button--><a href="#" class="btn btn-info add_event pull-right"><img src="img/icon-calee-plus.svg" width="25px"></a> 
+							<!--Event Title-->
+							<h4 class="pull-left"><a href="#">Event title</a> </h4>
+							<!--Event Meta data--> 
+							<span style="font-size:.9em">&nbsp; | <a href="#">Event Location</a> | <a href="#">Event Date</a></span> 
+							<!--Event Description-->
+							<p>Hey Guys I am having a get-together to celebrate how awesome this project is. Feel free to stop by and have a great time. Moe is so totally invited, cause he will bring the cards. <a href="#">...More</a></p>
+							<!--RECALEI-->
+							<div class="feed_meta"> <i class="icon-retweet"></i>&nbsp;<a href="#">Recalee</a>&nbsp; 
+								<!--Invite friends/followers, maybe from facebook--> 
+								<i class="icon-plus"></i>&nbsp;<a href="#">Invite Friends</a>&nbsp; 
+								<!--Share on Twitter--> 
+								<i class="icon-share"></i>&nbsp;<a href="#">Share</a>&nbsp; 
+								<!--Share on Twitter--> 
+								<i class="icon-search"></i>&nbsp;<a href="#">View</a> </div>
+							<hr>
+						</div>
+					</div>
+				</ul>
+		          	</div>
+		        </div>
+	      	</div>
+    	</div><!-- Nav bar for Calendar and feed -->  
+     </div>
       <!--Footer-->
 	<hr>
 	<footer>
 		<p>&copy; Calestar 2013 | <a href="#">Home</a> | <a href="#">About</a> |</p>
 	</footer>
 </div> <!-- End of container -->
-
-
+</body>
+</html>
