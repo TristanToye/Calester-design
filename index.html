@@ -1,221 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Bootstrap</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<head>
+<meta charset="utf-8">
+<title>Bootstrap, from Twitter</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <!-- Le styles -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="assets/css/docs.css" rel="stylesheet">
-    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+<!-- Le styles -->
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<style>
+body {
+	padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  /*this is for the background rotation*/
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position:center top;
+}
+.logo {
+	height: 20px;
+	vertical-align: top;
+}
+/*--SCROLL BARS--*/
+::-webkit-scrollbar {
+ width:7px;
+ background-color: #ddd;
+ -webkit-border-radius:4px;
+}
+::-webkit-resizer {
+ -webkit-border-radius:4px;
+ background-color:#666;
+}
+::-webkit-scrollbar-thumb {
+ min-width:0.8em;
+ -webkit-border-radius:4px;
+ background-color:#666;
+}
+::-webkit-scrollbar-thumb:hover {
+ background-color: #bbb;
+}
+::-webkit-scrollbar-thumb:active {
+ background-color:#888;
+}
+​ {
+}
+.feed {
+	min-height: 115px;
+	max-height: 500px;
+	overflow: auto;
+	overflow: -moz-scrollbars-vertical;
+	margin: 0;
+}
+.feed h4 {
+	margin-top: 0;
+	margin-bottom: 3px;
+}
+.feed hr {
+	margin: 15px 0;
+}
+.feed .span1 {
+	margin-left: 0;
+}
+.feed .row {
+	margin: 0;
+}
+.feed .span {
+	width: 75%;
+}
+.feed p {
+	font-size: .9em;
+	clear: left
+}
+.sidebar {
+  margin-top: 3%;
+}
+.sidebar ul li{
+  margin-top: 3%;
+}
+.sidebar ul li i {
+  margin-left: 45px;
+}
+.socialmedia li{
+	display: inline-block;
+	list-style: none;
+	margin-top:2%;
+}
+.nigg{
+	margin-top: 5%;
+}
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
+.welcome {
+text-align: center !important;
+padding-top: 105px;
+color: #333;
+}
+
+.welcome {
+color: #7b6f6f;
+font-family: 'Georgia';
+font-size: 22px;
+line-height: 1.4;
+margin-left: -303px;
+position: fixed;
+top: 0;
+left: 50%;
+width: 606px;
+-webkit-transition: opacity 1s;
+-webkit-transition-delay: 0.3s;
+-webkit-transform: translateZ(0);
+}
+.info{
+  margin-top: 15%;
+  background-color:rgba(0,0,0,0.75);
+  width: auto;
+  height:auto;
+  padding: 1%;
+  color: white;
+  border-radius: 15px;
+}
+
+.wrapper {
+margin-top: 550px;
+position: relative;
+z-index: 99;
+}
+.shadow {
+-moz-box-shadow: 0 -2px 20px 0 rgba(0, 0, 0, 0.2);
+-webkit-box-shadow: 0 -2px 20px 0 rgba(0, 0, 0, 0.2);
+box-shadow: 0 -2px 20px 0 rgba(0, 0, 0, 0.2);
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 20px;
+-webkit-transform: translateZ(0);
+}
+.content {
+padding-top:;
+background: #fdfdfd;
+position: relative;
+overflow: hidden;
+min-height: 100px;
+}
+.header {
+margin: 0 0 35px;
+padding-top: ;
+text-align: center;
+}
+
+
+</style>
+<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
     <![endif]-->
 
-    <!-- Le fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="assets/ico/favicon.png">
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="assets/ico/favicon.png">
 
-  </head>
+<!-- Bootstrap calendar -->
+<link rel="stylesheet" href="assets/css/bootstrap.calendar.css" type="text/css" />
 
-  <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
-    <!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="./index.html">Bootstrap</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active">
-                <a href="./index.html">Home</a>
-              </li>
-              <li class="">
-                <a href="./getting-started.html">Get started</a>
-              </li>
-              <li class="">
-                <a href="./scaffolding.html">Scaffolding</a>
-              </li>
-              <li class="">
-                <a href="./base-css.html">Base CSS</a>
-              </li>
-              <li class="">
-                <a href="./components.html">Components</a>
-              </li>
-              <li class="">
-                <a href="./javascript.html">JavaScript</a>
-              </li>
-              <li class="">
-                <a href="./customize.html">Customize</a>
-              </li>
-            </ul>
-          </div>
+    <!-- jQuery and the Calendar plugin files -->
+    <script type="text/javascript" src="assets/js/jquery.js" ></script>
+    <script type="text/javascript" src="assets/js/bootstrap.js" ></script>
+    <script type="text/javascript" src="assets/js/bootstrap.calendar.js" ></script>
+    <script type="text/javascript"> 
+      var totalCount = 4;
+      function ChangeIt() 
+      {
+      var num = Math.ceil( Math.random() * totalCount );
+      document.body.background = 'imgrotate/'+num+'.jpg';
+      document.body.style.backgroundRepeat = " ";// Background repeat
+      }
+    </script>
+</head>
+<body>
+  <div class="row">
+    <div class="span12">
+      <div class="welcome">
+        <img src="img/Calester Logo.svg">
+        <div class="info">
+          <h3>Calester makes organizing your calendar easy.</h3>
+          <h4>Follow your favorite teams, business organizations, clubs, meetup groups, friends and family </h4>
         </div>
       </div>
     </div>
-
-<div class="jumbotron masthead">
-  <div class="container">
-    <h1>Bootstrap</h1>
-    <p>Sleek, intuitive, and powerful front-end framework for faster and easier web development.</p>
-    <p>
-      <a href="assets/bootstrap.zip" class="btn btn-primary btn-large" >Download Bootstrap</a>
-    </p>
-    <ul class="masthead-links">
-      <li>
-        <a href="http://github.com/twitter/bootstrap" >GitHub project</a>
-      </li>
-      <li>
-        <a href="./getting-started.html#examples" >Examples</a>
-      </li>
-      <li>
-        <a href="./extend.html" >Extend</a>
-      </li>
-      <li>
-        Version 2.3.1
-      </li>
-    </ul>
-  </div>
-</div>
-
-<div class="bs-docs-social">
-  <div class="container">
-    <ul class="bs-docs-social-buttons">
-      <li>
-        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=twitter&repo=bootstrap&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
-      </li>
-      <li>
-        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=twitter&repo=bootstrap&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="102px" height="20px"></iframe>
-      </li>
-      <li class="follow-btn">
-        <a href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @twbootstrap</a>
-      </li>
-      <li class="tweet-btn">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://twitter.github.com/bootstrap/" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Twitter Bootstrap">Tweet</a>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<div class="container">
-
-  <div class="marketing">
-
-    <h1>Introducing Bootstrap.</h1>
-    <p class="marketing-byline">Need reasons to love Bootstrap? Look no further.</p>
-
-    <div class="row-fluid">
-      <div class="span4">
-        <img class="marketing-img" src="assets/img/bs-docs-twitter-github.png">
-        <h2>By nerds, for nerds.</h2>
-        <p>Built at Twitter by <a href="http://twitter.com/mdo">@mdo</a> and <a href="http://twitter.com/fat">@fat</a>, Bootstrap utilizes <a href="http://lesscss.org">LESS CSS</a>, is compiled via <a href="http://nodejs.org">Node</a>, and is managed through <a href="http://github.com">GitHub</a> to help nerds do awesome stuff on the web.</p>
+    <div class="wrapper">
+      <div class="shadow">
       </div>
-      <div class="span4">
-        <img class="marketing-img" src="assets/img/bs-docs-responsive-illustrations.png">
-        <h2>Made for everyone.</h2>
-        <p>Bootstrap was made to not only look and behave great in the latest desktop browsers (as well as IE7!), but in tablet and smartphone browsers via <a href="./scaffolding.html#responsive">responsive CSS</a> as well.</p>
-      </div>
-      <div class="span4">
-        <img class="marketing-img" src="assets/img/bs-docs-bootstrap-features.png">
-        <h2>Packed with features.</h2>
-        <p>A 12-column responsive <a href="./scaffolding.html#gridSystem">grid</a>, dozens of components, <a href="./javascript.html">JavaScript plugins</a>, typography, form controls, and even a <a href="./customize.html">web-based Customizer</a> to make Bootstrap your own.</p>
+      <div class="content">
+        <div class="header">
+          <h4 class="text-error">Scroll down to signup</h4>
+        </br>
+          <h4>We are launching soon, but lets stay in touch</h4>
+          <form id="form1" name="form1" class="wufoo topLabel page" autocomplete="off" enctype="multipart/form-data" method="post" novalidate
+              action="https://calester.wufoo.com/forms/z7x3p3/#public">
+            <ul>
+              <li id="foli111" class="notranslate      ">
+                <label class="desc" id="title111" for="Field111">Name</label>
+                <div class="controls">
+                  <div class="input-prepend">
+                    <span class="add-on"><i class="icon-user"></i></span>
+                    <input id="Field111" name="Field111" type="text" class="field text medium" value="" maxlength="255" tabindex="1" onkeyup="" />
+                  </div>
+                </div>
+              </li>
+              <li id="foli112" class="notranslate      ">
+                <label class="desc" id="title112" for="Field112">School</label>
+                <div class="controls">
+                  <div class="input-prepend">
+                    <span class="add-on"><i class="icon-book"></i></span>
+                    <input id="Field112" name="Field112" type="text" class="field text medium" value="" maxlength="255" tabindex="2" onkeyup="" />
+                  </div>
+                </div>
+              </li>
+              <li id="foli1" class="notranslate      ">
+                <label class="desc" id="title1" for="Field1">Email</label>
+                <div class="controls">
+                  <div class="input-prepend">
+                    <span class="add-on"><i class="icon-envelope"></i></span>
+                    <input id="Field1" name="Field1" type="email" spellcheck="false" class="field text medium" value="" maxlength="255"                             tabindex="3" /> 
+                  </div>
+                </div>
+              </li>
+              <li id="foli2" class="notranslate      ">
+                <fieldset>
+                  <div>
+                    <span>
+                      <input id="Field2" name="Field2" type="checkbox" class="field checkbox" value="Yes" tabindex="4" /><label class="choice"                              for="Field2">Send me updates</label>
+                    </span>
+                  </div>
+                </fieldset>
+              </li>
+              <li class="buttons">
+                <div>
+                  <input id="saveForm" name="saveForm" class="btTxt submit btn btn-danger" type="submit" value="Submit"/>
+                </div>
+              </li>
+              <li class="hide">
+                <label for="comment">Do Not Fill This Out</label>
+                <textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+                <input type="hidden" id="idstamp" name="idstamp" value="WRVBJ4pQlcPFQZruCneNy3Rgt5djS9jywmU2/JoSzvk=" />
+              </li>
+            </ul>
+          </form> 
+        </div>
       </div>
     </div>
-
-    <hr class="soften">
-
-    <h1>Built with Bootstrap.</h1>
-    <p class="marketing-byline">For even more sites built with Bootstrap, <a href="http://builtwithbootstrap.tumblr.com/" target="_blank">visit the unofficial Tumblr</a> or <a href="./getting-started.html#examples">browse the examples</a>.</p>
-    <div class="row-fluid">
-      <ul class="thumbnails example-sites">
-        <li class="span3">
-          <a class="thumbnail" href="http://soundready.fm/" target="_blank">
-            <img src="assets/img/example-sites/soundready.png" alt="SoundReady.fm">
-          </a>
-        </li>
-        <li class="span3">
-          <a class="thumbnail" href="http://kippt.com/" target="_blank">
-            <img src="assets/img/example-sites/kippt.png" alt="Kippt">
-          </a>
-        </li>
-        <li class="span3">
-          <a class="thumbnail" href="http://www.gathercontent.com/" target="_blank">
-            <img src="assets/img/example-sites/gathercontent.png" alt="Gather Content">
-          </a>
-        </li>
-        <li class="span3">
-          <a class="thumbnail" href="http://www.jshint.com/" target="_blank">
-            <img src="assets/img/example-sites/jshint.png" alt="JS Hint">
-          </a>
-        </li>
-      </ul>
-     </div>
-
   </div>
-
-</div>
-
-
-
-    <!-- Footer
-    ================================================== -->
-    <footer class="footer">
-      <div class="container">
-        <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
-        <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <p><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-        <ul class="footer-links">
-          <li><a href="http://blog.getbootstrap.com">Blog</a></li>
-          <li class="muted">&middot;</li>
-          <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Issues</a></li>
-          <li class="muted">&middot;</li>
-          <li><a href="https://github.com/twitter/bootstrap/blob/master/CHANGELOG.md">Changelog</a></li>
-        </ul>
-      </div>
-    </footer>
-
-
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/bootstrap-transition.js"></script>
-    <script src="assets/js/bootstrap-alert.js"></script>
-    <script src="assets/js/bootstrap-modal.js"></script>
-    <script src="assets/js/bootstrap-dropdown.js"></script>
-    <script src="assets/js/bootstrap-scrollspy.js"></script>
-    <script src="assets/js/bootstrap-tab.js"></script>
-    <script src="assets/js/bootstrap-tooltip.js"></script>
-    <script src="assets/js/bootstrap-popover.js"></script>
-    <script src="assets/js/bootstrap-button.js"></script>
-    <script src="assets/js/bootstrap-collapse.js"></script>
-    <script src="assets/js/bootstrap-carousel.js"></script>
-    <script src="assets/js/bootstrap-typeahead.js"></script>
-    <script src="assets/js/bootstrap-affix.js"></script>
-
-    <script src="assets/js/holder/holder.js"></script>
-    <script src="assets/js/google-code-prettify/prettify.js"></script>
-
-    <script src="assets/js/application.js"></script>
-
-
-
-  </body>
+</body>
+<script type="text/javascript"> 
+      ChangeIt();
+    </script> 
 </html>
