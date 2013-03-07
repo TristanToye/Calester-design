@@ -3348,6 +3348,22 @@ input[type="button"].btn-block {
   color: rgba(255, 255, 255, 0.75);
 }
 
+.btn-pink {
+  background-color: hsl(319, 77%, 42%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e42faa", endColorstr="#bd1889");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#e42faa), to(#bd1889));
+  background-image: -moz-linear-gradient(top, #e42faa, #bd1889);
+  background-image: -ms-linear-gradient(top, #e42faa, #bd1889);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e42faa), color-stop(100%, #bd1889));
+  background-image: -webkit-linear-gradient(top, #e42faa, #bd1889);
+  background-image: -o-linear-gradient(top, #e42faa, #bd1889);
+  background-image: linear-gradient(#e42faa, #bd1889);
+  border-color: #bd1889 #bd1889 hsl(319, 77%, 39%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.19);
+  -webkit-font-smoothing: antialiased;
+}
 .btn-primary {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
